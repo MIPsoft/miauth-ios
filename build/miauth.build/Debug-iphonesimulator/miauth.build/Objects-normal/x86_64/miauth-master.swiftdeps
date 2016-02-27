@@ -1,0 +1,6 @@
+version: "Apple Swift version 2.1.1 (swiftlang-700.1.101.15 clang-700.1.81)"
+options: "1f027dcb4a073dc0f39ccda4fb3cf2ec"
+build_time: [509882791, 859325000]
+inputs:
+  "/sources/iPhone/miauth/miauth/ViewController.swift": [509882789, 0]
+  "/sources/iPhone/miauth/miauth/AppDelegate.swift": [509882789, 0]
