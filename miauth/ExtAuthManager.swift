@@ -6,6 +6,9 @@
 //  Copyright © 2016 MIPsoft. All rights reserved.
 //
 
+import LocalAuthentication //Support for fingerprint reader
+import UIKit
+
 class ExtAuthManager {
     static let sharedInstance = ExtAuthManager()
     var authenticators:Array<ExtAuthClient> = []
@@ -30,5 +33,41 @@ class ExtAuthManager {
     func setAttribute(attr:String,key:String) {
         attributes[key] = attr
     }
+    
+    func fingerprintReaderIsAvailable() -> Bool {
+        var error: NSError?
+        let context = LAContext()
+        return context.canEvaluatePolicy(.DeviceOwnerAuthenticationWithBiometrics, error: &error)
+    }
+    
+    func fingerprintReaderReadNow(ok:()->(), fallback:()->(), notok:()->())  {
+        let context = LAContext()
+        var error: NSError?
+        
+        if context.canEvaluatePolicy(.DeviceOwnerAuthenticationWithBiometrics, error: &error) {
+            let reason = "Identify yourself!"
+            
+            context.evaluatePolicy(.DeviceOwnerAuthenticationWithBiometrics, localizedReason: reason) {
+                (success: Bool, authenticationError: NSError?) -> Void in
+                
+                dispatch_async(dispatch_get_main_queue()) {
+                    if success {
+                        ok()
+                    } else {
+                        if let error = authenticationError {
+                            if error.code == LAError.UserFallback.rawValue {
+                                fallback()
+                                return
+                            }
+                        }
+                        notok()
+                    }
+                }
+            }
+        } else {
+            notok()
+        }
+    }
+
 
 }
