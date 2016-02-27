@@ -10,6 +10,8 @@ protocol ExtAuthClient {
     var authName: String { get set }
     var authUserID: String { get set }
     var isAvailable: Bool { get set }
+    var priority: Int { get set } //smallest priority is the best
+    
     
     func autoConnect()
     /*

@@ -13,6 +13,7 @@ class ExtAuthClientICloud: ExtAuthClient {
     var authName = "iCloud"
     var authUserID = ""
     var isAvailable = false
+    var priority = 1 //If iCloud is available, let's use that for basis for any future authentications
     
     let cloudKitContainer : CKContainer = CKContainer.defaultContainer()
     let cloudKitPublicDB : CKDatabase = CKContainer.defaultContainer().publicCloudDatabase

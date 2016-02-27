@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "8B2F773E1C81ACA500AF9020"
-               BuildableName = "miauth.app"
-               BlueprintName = "miauth"
+               BuildableName = "miAuth.app"
+               BlueprintName = "miAuth"
                ReferencedContainer = "container:miauth.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -33,8 +33,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "8B2F77521C81ACA500AF9020"
-               BuildableName = "miauthTests.xctest"
-               BlueprintName = "miauthTests"
+               BuildableName = "miAuthTests.xctest"
+               BlueprintName = "miAuthTests"
                ReferencedContainer = "container:miauth.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -43,8 +43,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8B2F773E1C81ACA500AF9020"
-            BuildableName = "miauth.app"
-            BlueprintName = "miauth"
+            BuildableName = "miAuth.app"
+            BlueprintName = "miAuth"
             ReferencedContainer = "container:miauth.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -66,8 +66,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8B2F773E1C81ACA500AF9020"
-            BuildableName = "miauth.app"
-            BlueprintName = "miauth"
+            BuildableName = "miAuth.app"
+            BlueprintName = "miAuth"
             ReferencedContainer = "container:miauth.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -85,8 +85,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8B2F773E1C81ACA500AF9020"
-            BuildableName = "miauth.app"
-            BlueprintName = "miauth"
+            BuildableName = "miAuth.app"
+            BlueprintName = "miAuth"
             ReferencedContainer = "container:miauth.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

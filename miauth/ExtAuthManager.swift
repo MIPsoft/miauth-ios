@@ -7,7 +7,9 @@
 //
 
 class ExtAuthManager {
+    static let sharedInstance = ExtAuthManager()
     var authenticators:Array<ExtAuthClient> = []
+    var attributes = [String: String]()
     
     init()
     {
@@ -23,6 +25,10 @@ class ExtAuthManager {
                 ac.autoConnect()
             }
         }
+    }
+    
+    func setAttribute(attr:String,key:String) {
+        attributes[key] = attr
     }
 
 }

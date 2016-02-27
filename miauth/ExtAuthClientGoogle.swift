@@ -11,6 +11,7 @@ class ExtAuthClientGoogle: ExtAuthClient {
     var authName = "Google"
     var authUserID = ""
     var isAvailable = false
+    var priority = 100
     
     init() {
         //This is initialized from AppDelegate, since we need to handle url scheme stuff from there
@@ -24,6 +25,8 @@ class ExtAuthClientGoogle: ExtAuthClient {
     {
         isAvailable = true
         authUserID = userId
+        ExtAuthManager.sharedInstance.setAttribute(email, key: "email")
+        ExtAuthManager.sharedInstance.setAttribute(name, key: "name")
     }
 
 }

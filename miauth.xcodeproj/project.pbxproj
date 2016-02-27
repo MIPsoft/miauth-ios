@@ -41,14 +41,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		8B2F773F1C81ACA500AF9020 /* miauth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = miauth.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B2F773F1C81ACA500AF9020 /* miAuth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = miAuth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B2F77421C81ACA500AF9020 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8B2F77441C81ACA500AF9020 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8B2F77471C81ACA500AF9020 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8B2F77491C81ACA500AF9020 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8B2F774C1C81ACA500AF9020 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8B2F774E1C81ACA500AF9020 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8B2F77531C81ACA500AF9020 /* miauthTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = miauthTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B2F77531C81ACA500AF9020 /* miAuthTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = miAuthTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B2F77571C81ACA500AF9020 /* miauthTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = miauthTests.swift; sourceTree = "<group>"; };
 		8B2F77591C81ACA500AF9020 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8B2F77621C81B5A100AF9020 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
@@ -109,8 +109,8 @@
 		8B2F77401C81ACA500AF9020 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8B2F773F1C81ACA500AF9020 /* miauth.app */,
-				8B2F77531C81ACA500AF9020 /* miauthTests.xctest */,
+				8B2F773F1C81ACA500AF9020 /* miAuth.app */,
+				8B2F77531C81ACA500AF9020 /* miAuthTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -158,9 +158,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		8B2F773E1C81ACA500AF9020 /* miauth */ = {
+		8B2F773E1C81ACA500AF9020 /* miAuth */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8B2F775C1C81ACA500AF9020 /* Build configuration list for PBXNativeTarget "miauth" */;
+			buildConfigurationList = 8B2F775C1C81ACA500AF9020 /* Build configuration list for PBXNativeTarget "miAuth" */;
 			buildPhases = (
 				0D8AD59D72D6481A77AD4D9A /* Check Pods Manifest.lock */,
 				8B2F773B1C81ACA500AF9020 /* Sources */,
@@ -173,14 +173,14 @@
 			);
 			dependencies = (
 			);
-			name = miauth;
+			name = miAuth;
 			productName = miauth;
-			productReference = 8B2F773F1C81ACA500AF9020 /* miauth.app */;
+			productReference = 8B2F773F1C81ACA500AF9020 /* miAuth.app */;
 			productType = "com.apple.product-type.application";
 		};
-		8B2F77521C81ACA500AF9020 /* miauthTests */ = {
+		8B2F77521C81ACA500AF9020 /* miAuthTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8B2F775F1C81ACA500AF9020 /* Build configuration list for PBXNativeTarget "miauthTests" */;
+			buildConfigurationList = 8B2F775F1C81ACA500AF9020 /* Build configuration list for PBXNativeTarget "miAuthTests" */;
 			buildPhases = (
 				8B2F774F1C81ACA500AF9020 /* Sources */,
 				8B2F77501C81ACA500AF9020 /* Frameworks */,
@@ -191,9 +191,9 @@
 			dependencies = (
 				8B2F77551C81ACA500AF9020 /* PBXTargetDependency */,
 			);
-			name = miauthTests;
+			name = miAuthTests;
 			productName = miauthTests;
-			productReference = 8B2F77531C81ACA500AF9020 /* miauthTests.xctest */;
+			productReference = 8B2F77531C81ACA500AF9020 /* miAuthTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -234,8 +234,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8B2F773E1C81ACA500AF9020 /* miauth */,
-				8B2F77521C81ACA500AF9020 /* miauthTests */,
+				8B2F773E1C81ACA500AF9020 /* miAuth */,
+				8B2F77521C81ACA500AF9020 /* miAuthTests */,
 			);
 		};
 /* End PBXProject section */
@@ -344,7 +344,7 @@
 /* Begin PBXTargetDependency section */
 		8B2F77551C81ACA500AF9020 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 8B2F773E1C81ACA500AF9020 /* miauth */;
+			target = 8B2F773E1C81ACA500AF9020 /* miAuth */;
 			targetProxy = 8B2F77541C81ACA500AF9020 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -546,7 +546,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8B2F775C1C81ACA500AF9020 /* Build configuration list for PBXNativeTarget "miauth" */ = {
+		8B2F775C1C81ACA500AF9020 /* Build configuration list for PBXNativeTarget "miAuth" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8B2F775D1C81ACA500AF9020 /* Debug */,
@@ -555,7 +555,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8B2F775F1C81ACA500AF9020 /* Build configuration list for PBXNativeTarget "miauthTests" */ = {
+		8B2F775F1C81ACA500AF9020 /* Build configuration list for PBXNativeTarget "miAuthTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8B2F77601C81ACA500AF9020 /* Debug */,
