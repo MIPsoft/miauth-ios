@@ -19,7 +19,7 @@ class ExtAuthManager {
     func doAutoConnect()
     {
         for ac in authenticators {
-            if  ac.isAvailable() {
+            if  ac.isAvailable {
                 ac.autoConnect()
             }
         }

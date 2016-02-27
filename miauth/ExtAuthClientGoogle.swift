@@ -6,28 +6,24 @@
 //  Copyright © 2016 MIPsoft. All rights reserved.
 //
 
-import Google
-
-class ExtAuthClientGoogle: ExtAuthClient,GIDSignInDelegate {
+class ExtAuthClientGoogle: ExtAuthClient {
+    static let sharedInstance = ExtAuthClientGoogle()
     var authName = "Google"
     var authUserID = ""
+    var isAvailable = false
     
     init() {
-        // Initialize sign-in
-        var configureError: NSError?
-        GGLContext.sharedInstance().configureWithError(&configureError)
-        assert(configureError == nil, "Error configuring Google services: \(configureError)")
-        
-        GIDSignIn.sharedInstance().delegate = self
-        GIDSignIn.sharedInstance().signInSilently()
+        //This is initialized from AppDelegate, since we need to handle url scheme stuff from there
     }
     
     func autoConnect() {
         print("ExternalAuthenticationClient \(authName) autoconnecting")
     }
     
-    func isAvailable() -> Bool
+    func signInOk(userId:String,email:String,name:String)
     {
-        return false
+        isAvailable = true
+        authUserID = userId
     }
+
 }

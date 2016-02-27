@@ -12,10 +12,15 @@ import CloudKit
 class ExtAuthClientICloud: ExtAuthClient {
     var authName = "iCloud"
     var authUserID = ""
+    var isAvailable = false
     
     let cloudKitContainer : CKContainer = CKContainer.defaultContainer()
     let cloudKitPublicDB : CKDatabase = CKContainer.defaultContainer().publicCloudDatabase
     let cloudKitPrivateDB : CKDatabase = CKContainer.defaultContainer().privateCloudDatabase
+    
+    init() {
+        isAvailable = self.isICloudActive()
+    }
     
     func autoConnect() {
         print("ExternalAuthenticationClient \(authName) autoconnecting")
@@ -30,7 +35,7 @@ class ExtAuthClientICloud: ExtAuthClient {
         }
     }
     
-    func isAvailable() -> Bool
+    private func isICloudActive() -> Bool
     {
         if let _ = NSFileManager.defaultManager().ubiquityIdentityToken{
             return true
