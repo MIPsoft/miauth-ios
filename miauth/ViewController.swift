@@ -8,12 +8,14 @@
 
 
 import UIKit
+    var extAuthManager: ExtAuthManager?
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        extAuthManager = ExtAuthManager.init()
     }
 
     override func didReceiveMemoryWarning() {

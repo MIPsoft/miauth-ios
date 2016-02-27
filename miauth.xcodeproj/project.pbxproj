@@ -15,6 +15,14 @@
 		8B2F77581C81ACA500AF9020 /* miauthTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2F77571C81ACA500AF9020 /* miauthTests.swift */; };
 		8B2F77631C81B5A100AF9020 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 8B2F77621C81B5A100AF9020 /* .gitignore */; };
 		8B38EA231C81B7D70084B705 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B38EA221C81B7D70084B705 /* CloudKit.framework */; };
+		8B4C9D461C821BB200DF5FF6 /* ExtAuthClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4C9D451C821BB200DF5FF6 /* ExtAuthClient.swift */; };
+		8B4C9D471C821BB700DF5FF6 /* ExtAuthClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4C9D451C821BB200DF5FF6 /* ExtAuthClient.swift */; };
+		8B4C9D491C821CDB00DF5FF6 /* ExtAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4C9D481C821CDB00DF5FF6 /* ExtAuthManager.swift */; };
+		8B4C9D4A1C821CDB00DF5FF6 /* ExtAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4C9D481C821CDB00DF5FF6 /* ExtAuthManager.swift */; };
+		8B4C9D4C1C821F9200DF5FF6 /* ExtAuthClientGoogle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4C9D4B1C821F9200DF5FF6 /* ExtAuthClientGoogle.swift */; };
+		8B4C9D4D1C821F9200DF5FF6 /* ExtAuthClientGoogle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4C9D4B1C821F9200DF5FF6 /* ExtAuthClientGoogle.swift */; };
+		8B4C9D4F1C821FDE00DF5FF6 /* ExtAuthClientICloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4C9D4E1C821FDE00DF5FF6 /* ExtAuthClientICloud.swift */; };
+		8B4C9D501C821FDE00DF5FF6 /* ExtAuthClientICloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4C9D4E1C821FDE00DF5FF6 /* ExtAuthClientICloud.swift */; };
 		8BCCEAFE1C81BE19004B6170 /* PinPadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BCCEAFD1C81BE19004B6170 /* PinPadViewController.swift */; };
 		A6E8973754E63DBC955EE729 /* Pods_miauth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D23DE78326EFD168740442AC /* Pods_miauth.framework */; };
 /* End PBXBuildFile section */
@@ -43,6 +51,10 @@
 		8B2F77621C81B5A100AF9020 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		8B38EA211C81B7D40084B705 /* miauth.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = miauth.entitlements; sourceTree = "<group>"; };
 		8B38EA221C81B7D70084B705 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		8B4C9D451C821BB200DF5FF6 /* ExtAuthClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtAuthClient.swift; sourceTree = "<group>"; };
+		8B4C9D481C821CDB00DF5FF6 /* ExtAuthManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtAuthManager.swift; sourceTree = "<group>"; };
+		8B4C9D4B1C821F9200DF5FF6 /* ExtAuthClientGoogle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtAuthClientGoogle.swift; sourceTree = "<group>"; };
+		8B4C9D4E1C821FDE00DF5FF6 /* ExtAuthClientICloud.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtAuthClientICloud.swift; sourceTree = "<group>"; };
 		8BCCEAFD1C81BE19004B6170 /* PinPadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinPadViewController.swift; sourceTree = "<group>"; };
 		BC0670FAA87C9D0CB679E577 /* Pods-miauth.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-miauth.release.xcconfig"; path = "Pods/Target Support Files/Pods-miauth/Pods-miauth.release.xcconfig"; sourceTree = "<group>"; };
 		D01C203A9CEF8A32D2C3371F /* Pods-miauth.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-miauth.debug.xcconfig"; path = "Pods/Target Support Files/Pods-miauth/Pods-miauth.debug.xcconfig"; sourceTree = "<group>"; };
@@ -105,6 +117,10 @@
 				8B2F77421C81ACA500AF9020 /* AppDelegate.swift */,
 				8B2F77441C81ACA500AF9020 /* ViewController.swift */,
 				8BCCEAFD1C81BE19004B6170 /* PinPadViewController.swift */,
+				8B4C9D451C821BB200DF5FF6 /* ExtAuthClient.swift */,
+				8B4C9D4B1C821F9200DF5FF6 /* ExtAuthClientGoogle.swift */,
+				8B4C9D4E1C821FDE00DF5FF6 /* ExtAuthClientICloud.swift */,
+				8B4C9D481C821CDB00DF5FF6 /* ExtAuthManager.swift */,
 				8B2F77461C81ACA500AF9020 /* Main.storyboard */,
 				8B2F77491C81ACA500AF9020 /* Assets.xcassets */,
 				8B2F774B1C81ACA500AF9020 /* LaunchScreen.storyboard */,
@@ -294,6 +310,10 @@
 				8BCCEAFE1C81BE19004B6170 /* PinPadViewController.swift in Sources */,
 				8B2F77451C81ACA500AF9020 /* ViewController.swift in Sources */,
 				8B2F77431C81ACA500AF9020 /* AppDelegate.swift in Sources */,
+				8B4C9D491C821CDB00DF5FF6 /* ExtAuthManager.swift in Sources */,
+				8B4C9D461C821BB200DF5FF6 /* ExtAuthClient.swift in Sources */,
+				8B4C9D4F1C821FDE00DF5FF6 /* ExtAuthClientICloud.swift in Sources */,
+				8B4C9D4C1C821F9200DF5FF6 /* ExtAuthClientGoogle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,6 +322,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B2F77581C81ACA500AF9020 /* miauthTests.swift in Sources */,
+				8B4C9D501C821FDE00DF5FF6 /* ExtAuthClientICloud.swift in Sources */,
+				8B4C9D4A1C821CDB00DF5FF6 /* ExtAuthManager.swift in Sources */,
+				8B4C9D471C821BB700DF5FF6 /* ExtAuthClient.swift in Sources */,
+				8B4C9D4D1C821F9200DF5FF6 /* ExtAuthClientGoogle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -424,6 +448,7 @@
 				CODE_SIGN_ENTITLEMENTS = miauth/miauth.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = miauth/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
@@ -453,6 +478,7 @@
 				CODE_SIGN_ENTITLEMENTS = miauth/miauth.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = miauth/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (

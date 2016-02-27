@@ -65,14 +65,7 @@ class PinPadViewController: UIViewController {
                 obscuredText += " "
             }
         }
-        if codesEntered>0 {
-            buttonDelete!.setTitle("poista", forState: UIControlState.Normal)
-        }
-        else {
-            buttonDelete!.setTitle("", forState: UIControlState.Normal)
-        }
-        
-        
+        buttonDelete!.hidden  = codesEntered==0
         labelObscured!.text = obscuredText
     }
     
@@ -88,13 +81,12 @@ class PinPadViewController: UIViewController {
         let idx = col + row*3
         button.frame = CGRectMake(x,y, btnWidth!*scale, btnHeight!*scale)
         button.addTarget(self, action: "buttonAction:", forControlEvents: UIControlEvents.TouchUpInside)
-        button.addTarget(self, action: Selector("holdRelease:"), forControlEvents: UIControlEvents.TouchUpInside);
-        button.addTarget(self, action: Selector("holdDown:"), forControlEvents: UIControlEvents.TouchDown)
         button.tag = idx
         if (  row==3 && col == 2 ) { //Del button
             button.setTitle("", forState: UIControlState.Normal)
             button.titleLabel!.font =  UIFont.monospacedDigitSystemFontOfSize(screenHeight!/30,weight: 0.1)
             buttonDelete = button
+            buttonDelete!.setTitle("poista", forState: UIControlState.Normal)
         }
         else { //number
             var divider:CGFloat = 8.0
@@ -106,6 +98,8 @@ class PinPadViewController: UIViewController {
             button.titleLabel!.font =  UIFont.monospacedDigitSystemFontOfSize(screenHeight!/divider,weight: 0.1)
             button.setTitle(buttonLabel[idx], forState: UIControlState.Normal)
             button.layer.borderColor = UIColor.blackColor().CGColor
+            button.addTarget(self, action: Selector("holdRelease:"), forControlEvents: UIControlEvents.TouchUpInside);
+            button.addTarget(self, action: Selector("holdDown:"), forControlEvents: UIControlEvents.TouchDown)
         }
         
         
@@ -128,6 +122,7 @@ class PinPadViewController: UIViewController {
         let idx = sender.tag
         if idx == 11 { //Poista
             pinCodeEntered = pinCodeEntered.substringToIndex(pinCodeEntered.endIndex.predecessor())
+            sender.hidden = true
         }
         else {
             pinCodeEntered.append(key!)
