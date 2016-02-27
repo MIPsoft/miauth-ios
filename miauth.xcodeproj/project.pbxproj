@@ -13,6 +13,7 @@
 		8B2F774A1C81ACA500AF9020 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B2F77491C81ACA500AF9020 /* Assets.xcassets */; };
 		8B2F774D1C81ACA500AF9020 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B2F774B1C81ACA500AF9020 /* LaunchScreen.storyboard */; };
 		8B2F77581C81ACA500AF9020 /* miauthTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2F77571C81ACA500AF9020 /* miauthTests.swift */; };
+		8B2F77631C81B5A100AF9020 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 8B2F77621C81B5A100AF9020 /* .gitignore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		8B2F77531C81ACA500AF9020 /* miauthTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = miauthTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B2F77571C81ACA500AF9020 /* miauthTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = miauthTests.swift; sourceTree = "<group>"; };
 		8B2F77591C81ACA500AF9020 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8B2F77621C81B5A100AF9020 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 				8B2F77491C81ACA500AF9020 /* Assets.xcassets */,
 				8B2F774B1C81ACA500AF9020 /* LaunchScreen.storyboard */,
 				8B2F774E1C81ACA500AF9020 /* Info.plist */,
+				8B2F77621C81B5A100AF9020 /* .gitignore */,
 			);
 			path = miauth;
 			sourceTree = "<group>";
@@ -177,6 +180,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B2F77631C81B5A100AF9020 /* .gitignore in Resources */,
 				8B2F774D1C81ACA500AF9020 /* LaunchScreen.storyboard in Resources */,
 				8B2F774A1C81ACA500AF9020 /* Assets.xcassets in Resources */,
 				8B2F77481C81ACA500AF9020 /* Main.storyboard in Resources */,
@@ -386,6 +390,7 @@
 				8B2F775E1C81ACA500AF9020 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8B2F775F1C81ACA500AF9020 /* Build configuration list for PBXNativeTarget "miauthTests" */ = {
 			isa = XCConfigurationList;
@@ -394,6 +399,7 @@
 				8B2F77611C81ACA500AF9020 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
