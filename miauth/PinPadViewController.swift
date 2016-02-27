@@ -12,7 +12,7 @@ import AudioToolbox
 class PinPadViewController: UIViewController {
     var buttonsArray: Array<UIButton> = []
     let obscureChars:Array<Character> = ["◦","●"]
-    let buttonLabel:Array<String> = ["1","2","3","4","5","6","7","8","9","","0",""]
+    let buttonLabel:Array<String> = ["1","2","3","4","5","6","7","8","9","","0","del"]
     let screenSize: CGRect = UIScreen.mainScreen().bounds
     var screenWidth:CGFloat?
     var btnWidth:CGFloat?
@@ -21,6 +21,7 @@ class PinPadViewController: UIViewController {
     var labelObscured:UILabel?
     var pinCodeEntered:String = ""
     var pinCodeLength:Int = 4
+    var buttonDelete:UIButton?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +34,6 @@ class PinPadViewController: UIViewController {
         labelObscured = UILabel(frame: CGRectMake(0,0,screenWidth!,topHeight))
         labelObscured!.textAlignment = .Center
         labelObscured!.font =  UIFont.monospacedDigitSystemFontOfSize(screenHeight!/10.0,weight: 0.1)
-        updateObscured()
         self.view.addSubview(labelObscured!)
         
         // Do any additional setup after loading the view, typically from a nib.
@@ -42,6 +42,8 @@ class PinPadViewController: UIViewController {
                 createButton(c,row:r)
             }
         }
+        
+        updateObscured()
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -63,13 +65,20 @@ class PinPadViewController: UIViewController {
                 obscuredText += " "
             }
         }
+        if codesEntered>0 {
+            buttonDelete!.setTitle("poista", forState: UIControlState.Normal)
+        }
+        else {
+            buttonDelete!.setTitle("", forState: UIControlState.Normal)
+        }
+        
         
         labelObscured!.text = obscuredText
     }
     
     func createButton(col:Int,row:Int)
     {
-        if ( row==3 && col != 1 ) {
+        if ( row==3 && col < 1 ) {
             return
         }
         let scale:CGFloat = 0.8
@@ -79,21 +88,26 @@ class PinPadViewController: UIViewController {
         let idx = col + row*3
         button.frame = CGRectMake(x,y, btnWidth!*scale, btnHeight!*scale)
         button.addTarget(self, action: "buttonAction:", forControlEvents: UIControlEvents.TouchUpInside)
-        button.layer.cornerRadius = btnWidth!*scale/2
-        button.layer.borderWidth = 1
-        var divider:CGFloat = 8.0
-        if idx==11 {
-            divider = divider * 1.5
-        }
-        //button.titleLabel!.font =  UIFont.systemFontOfSize(screenHeight!/divider)
-        button.titleLabel!.font =  UIFont.monospacedDigitSystemFontOfSize(screenHeight!/divider,weight: 0.1)
-        button.tag = idx
-        
-        button.setTitle(buttonLabel[idx], forState: UIControlState.Normal)
-        button.layer.borderColor = UIColor.blackColor().CGColor
-        //button.tintColor =  UIColor.grayColor()
         button.addTarget(self, action: Selector("holdRelease:"), forControlEvents: UIControlEvents.TouchUpInside);
         button.addTarget(self, action: Selector("holdDown:"), forControlEvents: UIControlEvents.TouchDown)
+        button.tag = idx
+        if (  row==3 && col == 2 ) { //Del button
+            button.setTitle("", forState: UIControlState.Normal)
+            button.titleLabel!.font =  UIFont.monospacedDigitSystemFontOfSize(screenHeight!/30,weight: 0.1)
+            buttonDelete = button
+        }
+        else { //number
+            var divider:CGFloat = 8.0
+            if idx==11 {
+                divider = divider * 1.5
+            }
+            button.layer.cornerRadius = btnWidth!*scale/2
+            button.layer.borderWidth = 1
+            button.titleLabel!.font =  UIFont.monospacedDigitSystemFontOfSize(screenHeight!/divider,weight: 0.1)
+            button.setTitle(buttonLabel[idx], forState: UIControlState.Normal)
+            button.layer.borderColor = UIColor.blackColor().CGColor
+        }
+        
         
         self.view.addSubview(button)
     }
@@ -110,9 +124,14 @@ class PinPadViewController: UIViewController {
     
     func buttonAction(sender:UIButton!)
     {
-        print(sender.titleLabel!.text)
         let key = sender.titleLabel!.text!.characters.last
-        pinCodeEntered.append(key!)
+        let idx = sender.tag
+        if idx == 11 { //Poista
+            pinCodeEntered = pinCodeEntered.substringToIndex(pinCodeEntered.endIndex.predecessor())
+        }
+        else {
+            pinCodeEntered.append(key!)
+        }
         updateObscured()
         if pinCodeEntered.characters.count == pinCodeLength {
             checkPinCode()
