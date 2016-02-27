@@ -17,7 +17,6 @@ class ExtAuthClientICloud: ExtAuthClient {
     let cloudKitPublicDB : CKDatabase = CKContainer.defaultContainer().publicCloudDatabase
     let cloudKitPrivateDB : CKDatabase = CKContainer.defaultContainer().privateCloudDatabase
     
-
     func autoConnect() {
         print("ExternalAuthenticationClient \(authName) autoconnecting")
         cloudKitContainer.fetchUserRecordIDWithCompletionHandler{

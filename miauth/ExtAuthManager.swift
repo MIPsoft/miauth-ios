@@ -13,7 +13,6 @@ class ExtAuthManager {
     {
         authenticators.append(ExtAuthClientGoogle.init())
         authenticators.append(ExtAuthClientICloud.init())
-        
         doAutoConnect()
     }
     
