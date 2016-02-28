@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8B19812A1C8252440025EB07 /* InitAuthenticatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1981291C8252440025EB07 /* InitAuthenticatorViewController.swift */; };
 		8B2F77431C81ACA500AF9020 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2F77421C81ACA500AF9020 /* AppDelegate.swift */; };
 		8B2F77451C81ACA500AF9020 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2F77441C81ACA500AF9020 /* ViewController.swift */; };
 		8B2F77481C81ACA500AF9020 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B2F77461C81ACA500AF9020 /* Main.storyboard */; };
@@ -26,6 +27,8 @@
 		8B4C9D531C822A0A00DF5FF6 /* GoogleService-Info_TEMPLATE.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8B4C9D511C822A0A00DF5FF6 /* GoogleService-Info_TEMPLATE.plist */; };
 		8B4C9D561C822A0A00DF5FF6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8B4C9D521C822A0A00DF5FF6 /* GoogleService-Info.plist */; };
 		8B4C9D571C822A1600DF5FF6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8B4C9D521C822A0A00DF5FF6 /* GoogleService-Info.plist */; };
+		8B4C9D5A1C824BFC00DF5FF6 /* miAuth.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B4C9D591C824BFC00DF5FF6 /* miAuth.png */; };
+		8B4C9D5B1C824BFC00DF5FF6 /* miAuth.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B4C9D591C824BFC00DF5FF6 /* miAuth.png */; };
 		8BCCEAFE1C81BE19004B6170 /* PinPadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BCCEAFD1C81BE19004B6170 /* PinPadViewController.swift */; };
 		A6E8973754E63DBC955EE729 /* Pods_miauth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D23DE78326EFD168740442AC /* Pods_miauth.framework */; };
 /* End PBXBuildFile section */
@@ -41,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8B1981291C8252440025EB07 /* InitAuthenticatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitAuthenticatorViewController.swift; sourceTree = "<group>"; };
 		8B2F773F1C81ACA500AF9020 /* miAuth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = miAuth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B2F77421C81ACA500AF9020 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8B2F77441C81ACA500AF9020 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -60,6 +64,7 @@
 		8B4C9D4E1C821FDE00DF5FF6 /* ExtAuthClientICloud.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtAuthClientICloud.swift; sourceTree = "<group>"; };
 		8B4C9D511C822A0A00DF5FF6 /* GoogleService-Info_TEMPLATE.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info_TEMPLATE.plist"; sourceTree = SOURCE_ROOT; };
 		8B4C9D521C822A0A00DF5FF6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		8B4C9D591C824BFC00DF5FF6 /* miAuth.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = miAuth.png; path = resources/miAuth.png; sourceTree = SOURCE_ROOT; };
 		8BCCEAFD1C81BE19004B6170 /* PinPadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinPadViewController.swift; sourceTree = "<group>"; };
 		BC0670FAA87C9D0CB679E577 /* Pods-miauth.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-miauth.release.xcconfig"; path = "Pods/Target Support Files/Pods-miauth/Pods-miauth.release.xcconfig"; sourceTree = "<group>"; };
 		D01C203A9CEF8A32D2C3371F /* Pods-miauth.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-miauth.debug.xcconfig"; path = "Pods/Target Support Files/Pods-miauth/Pods-miauth.debug.xcconfig"; sourceTree = "<group>"; };
@@ -118,9 +123,11 @@
 		8B2F77411C81ACA500AF9020 /* miauth */ = {
 			isa = PBXGroup;
 			children = (
+				8B4C9D581C824B9100DF5FF6 /* resources */,
 				8B38EA211C81B7D40084B705 /* miauth.entitlements */,
 				8B2F77421C81ACA500AF9020 /* AppDelegate.swift */,
 				8B2F77441C81ACA500AF9020 /* ViewController.swift */,
+				8B1981291C8252440025EB07 /* InitAuthenticatorViewController.swift */,
 				8BCCEAFD1C81BE19004B6170 /* PinPadViewController.swift */,
 				8B4C9D451C821BB200DF5FF6 /* ExtAuthClient.swift */,
 				8B4C9D4B1C821F9200DF5FF6 /* ExtAuthClientGoogle.swift */,
@@ -144,6 +151,14 @@
 				8B2F77591C81ACA500AF9020 /* Info.plist */,
 			);
 			path = miauthTests;
+			sourceTree = "<group>";
+		};
+		8B4C9D581C824B9100DF5FF6 /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				8B4C9D591C824BFC00DF5FF6 /* miAuth.png */,
+			);
+			name = resources;
 			sourceTree = "<group>";
 		};
 		9B22B6D2CE9A214FCB6147E2 /* Pods */ = {
@@ -245,6 +260,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B4C9D5A1C824BFC00DF5FF6 /* miAuth.png in Resources */,
 				8B2F77631C81B5A100AF9020 /* .gitignore in Resources */,
 				8B2F774D1C81ACA500AF9020 /* LaunchScreen.storyboard in Resources */,
 				8B2F774A1C81ACA500AF9020 /* Assets.xcassets in Resources */,
@@ -259,6 +275,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B4C9D561C822A0A00DF5FF6 /* GoogleService-Info.plist in Resources */,
+				8B4C9D5B1C824BFC00DF5FF6 /* miAuth.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,6 +340,7 @@
 				8B4C9D491C821CDB00DF5FF6 /* ExtAuthManager.swift in Sources */,
 				8B4C9D461C821BB200DF5FF6 /* ExtAuthClient.swift in Sources */,
 				8B4C9D4F1C821FDE00DF5FF6 /* ExtAuthClientICloud.swift in Sources */,
+				8B19812A1C8252440025EB07 /* InitAuthenticatorViewController.swift in Sources */,
 				8B4C9D4C1C821F9200DF5FF6 /* ExtAuthClientGoogle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

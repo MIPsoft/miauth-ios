@@ -93,8 +93,10 @@ class PinPadViewController: UIViewController {
             if idx==11 {
                 divider = divider * 1.5
             }
+            holdRelease(button)
             button.layer.cornerRadius = btnWidth!*scale/2
             button.layer.borderWidth = 1
+            button.tintColor = UIColor.blackColor()
             button.titleLabel!.font =  UIFont.monospacedDigitSystemFontOfSize(screenHeight!/divider,weight: 0.1)
             button.setTitle(buttonLabel[idx], forState: UIControlState.Normal)
             button.layer.borderColor = UIColor.blackColor().CGColor
@@ -108,12 +110,13 @@ class PinPadViewController: UIViewController {
     
     func holdDown(sender:UIButton)
     {
-        sender.backgroundColor =  UIColor.lightGrayColor()
+        sender.backgroundColor =  UIColor.init(colorLiteralRed: 0.75, green: 0.75, blue: 0.75, alpha: 1.0)
     }
     
     func holdRelease(sender:UIButton)
     {
-        sender.backgroundColor =  UIColor.clearColor()
+       // sender.backgroundColor =  UIColor.whiteColor()
+         sender.backgroundColor =  UIColor.init(colorLiteralRed: 0.95, green: 0.95, blue: 0.95, alpha: 1.0)
     }
     
     func buttonAction(sender:UIButton!)

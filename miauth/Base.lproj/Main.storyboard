@@ -2,12 +2,159 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
+        <scene sceneID="xnM-Cq-hyP">
+            <objects>
+                <viewController id="1Yg-im-N1g" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ZPa-nS-hn9"/>
+                        <viewControllerLayoutGuide type="bottom" id="O9G-mo-dzm"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="rtv-0O-ey8">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="buW-L2-6Gz">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="465"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="htQ-qq-wRT">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="1. Connect" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZnL-jB-qdR">
+                                        <rect key="frame" x="0.0" y="50" width="600" height="42"/>
+                                        <color key="backgroundColor" red="0.9392049378453039" green="0.9392049378453039" blue="0.9392049378453039" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DfT-8N-fZa">
+                                        <rect key="frame" x="0.0" y="92" width="600" height="141"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YKP-EO-v6d">
+                                                <rect key="frame" x="0.0" y="0.0" width="300" height="141"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Apple iCloud" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZXC-Qv-C1n">
+                                                        <rect key="frame" x="71" y="8" width="98" height="21"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="ZXC-Qv-C1n" firstAttribute="centerX" secondItem="YKP-EO-v6d" secondAttribute="centerX" id="XDJ-hU-Jn3"/>
+                                                    <constraint firstItem="ZXC-Qv-C1n" firstAttribute="width" secondItem="YKP-EO-v6d" secondAttribute="width" id="cKM-6f-RVX"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6ZZ-Zd-X5m">
+                                                <rect key="frame" x="300" y="0.0" width="300" height="141"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Google" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1X0-8x-FoE">
+                                                        <rect key="frame" x="93" y="8" width="55" height="21"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="1X0-8x-FoE" firstAttribute="width" secondItem="6ZZ-Zd-X5m" secondAttribute="width" id="2MK-br-iUA"/>
+                                                    <constraint firstItem="1X0-8x-FoE" firstAttribute="centerX" secondItem="6ZZ-Zd-X5m" secondAttribute="centerX" id="kCl-tp-w4q"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="YKP-EO-v6d" firstAttribute="width" secondItem="DfT-8N-fZa" secondAttribute="width" multiplier="0.5" id="KuS-aE-YIK"/>
+                                            <constraint firstItem="6ZZ-Zd-X5m" firstAttribute="width" secondItem="DfT-8N-fZa" secondAttribute="width" multiplier="0.5" id="iUF-X3-YW3"/>
+                                        </constraints>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="2. Secure" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FDH-HT-vbL">
+                                        <rect key="frame" x="0.0" y="233" width="600" height="42"/>
+                                        <color key="backgroundColor" red="0.93920493780000003" green="0.93920493780000003" blue="0.93920493780000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yfo-Ct-GCn">
+                                        <rect key="frame" x="0.0" y="275" width="600" height="190"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MVm-3d-Mtx">
+                                                <rect key="frame" x="0.0" y="0.0" width="300" height="190"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4gX-HP-b66">
+                                                        <rect key="frame" x="15" y="115" width="174" height="28"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                        <state key="normal" title="Enter Pin code"/>
+                                                    </button>
+                                                    <segmentedControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bordered" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="sJv-O1-MiT">
+                                                        <rect key="frame" x="15" y="54" width="174" height="29"/>
+                                                        <segments>
+                                                            <segment title="4"/>
+                                                            <segment title="5"/>
+                                                            <segment title="6"/>
+                                                        </segments>
+                                                    </segmentedControl>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Length of PinCode" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="9vH-hm-02c">
+                                                        <rect key="frame" x="15" y="22" width="174" height="30"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="sJv-O1-MiT" firstAttribute="centerX" secondItem="MVm-3d-Mtx" secondAttribute="centerX" id="41j-8p-Ubz"/>
+                                                    <constraint firstItem="4gX-HP-b66" firstAttribute="width" secondItem="MVm-3d-Mtx" secondAttribute="width" id="Ckz-bS-e0M"/>
+                                                    <constraint firstItem="sJv-O1-MiT" firstAttribute="width" secondItem="MVm-3d-Mtx" secondAttribute="width" multiplier="0.8" id="Nl0-WH-a4O"/>
+                                                    <constraint firstItem="9vH-hm-02c" firstAttribute="centerX" secondItem="MVm-3d-Mtx" secondAttribute="centerX" id="OeK-jf-9lR"/>
+                                                    <constraint firstItem="9vH-hm-02c" firstAttribute="width" secondItem="MVm-3d-Mtx" secondAttribute="width" multiplier="0.8" id="VCK-L3-uCF"/>
+                                                    <constraint firstItem="4gX-HP-b66" firstAttribute="centerX" secondItem="MVm-3d-Mtx" secondAttribute="centerX" id="Y5J-6c-8iO"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NTq-gp-wfp">
+                                                <rect key="frame" x="300" y="0.0" width="300" height="190"/>
+                                                <subviews>
+                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tc3-e6-6kh">
+                                                        <rect key="frame" x="93" y="54" width="51" height="31"/>
+                                                    </switch>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Finger Print Reader" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ncD-CA-z9Q">
+                                                        <rect key="frame" x="44" y="19" width="165" height="37"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="tc3-e6-6kh" firstAttribute="centerX" secondItem="NTq-gp-wfp" secondAttribute="centerX" id="18b-sm-cCO"/>
+                                                    <constraint firstItem="ncD-CA-z9Q" firstAttribute="centerX" secondItem="NTq-gp-wfp" secondAttribute="centerX" id="Ug8-oe-lTe"/>
+                                                    <constraint firstItem="ncD-CA-z9Q" firstAttribute="width" secondItem="NTq-gp-wfp" secondAttribute="width" multiplier="0.8" id="qL3-Bd-zja"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="MVm-3d-Mtx" firstAttribute="width" secondItem="yfo-Ct-GCn" secondAttribute="width" multiplier="0.5" id="61Y-xL-tqh"/>
+                                            <constraint firstItem="NTq-gp-wfp" firstAttribute="width" secondItem="yfo-Ct-GCn" secondAttribute="width" multiplier="0.5" id="mdK-H9-4jS"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="buW-L2-6Gz" firstAttribute="width" secondItem="rtv-0O-ey8" secondAttribute="width" id="Pq2-NF-Qjb"/>
+                            <constraint firstItem="buW-L2-6Gz" firstAttribute="centerX" secondItem="rtv-0O-ey8" secondAttribute="centerX" id="X5V-Ip-vrK"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fbV-Z9-YuQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-363" y="188"/>
+        </scene>
+        <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="miauth" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="miAuth" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,24 +163,41 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" alpha="0.050000000000000003" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="miAuth.png" translatesAutoresizingMaskIntoConstraints="NO" id="s3x-va-ane">
+                                <rect key="frame" x="70" y="50" width="363" height="367"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u81-4K-fB9">
-                                <rect key="frame" x="32" y="40" width="81" height="30"/>
+                                <rect key="frame" x="6" y="101" width="81" height="30"/>
                                 <state key="normal" title="Test pinpad"/>
                                 <connections>
                                     <segue destination="V7p-xf-Ene" kind="presentation" id="toJ-qc-Q1b"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wIZ-mu-WON">
+                                <rect key="frame" x="14" y="50" width="30" height="30"/>
+                                <state key="normal" title="Init"/>
+                                <connections>
+                                    <segue destination="1Yg-im-N1g" kind="presentation" id="qMh-1P-KRD"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="s3x-va-ane" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="Ydx-s6-Bgc"/>
+                            <constraint firstItem="s3x-va-ane" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="mdL-Nm-X3v"/>
+                            <constraint firstItem="s3x-va-ane" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nWq-m7-cue"/>
+                            <constraint firstItem="s3x-va-ane" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="sjJ-zL-J3g"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="278" y="202"/>
         </scene>
         <!--Pin Pad View Controller-->
         <scene sceneID="Kcr-MS-AUA">
             <objects>
-                <viewController id="V7p-xf-Ene" customClass="PinPadViewController" customModule="miauth" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="V7p-xf-Ene" customClass="PinPadViewController" customModule="miAuth" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nfN-qQ-xlL"/>
                         <viewControllerLayoutGuide type="bottom" id="es4-BL-wyr"/>
@@ -41,7 +205,18 @@
                     <view key="view" contentMode="scaleToFill" id="CKP-kc-Stz">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" alpha="0.05000000074505806" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="miAuth.png" translatesAutoresizingMaskIntoConstraints="NO" id="uBE-BQ-xYZ">
+                                <rect key="frame" x="118" y="117" width="363" height="367"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="uBE-BQ-xYZ" firstAttribute="height" secondItem="CKP-kc-Stz" secondAttribute="height" id="4tS-j9-Uqc"/>
+                            <constraint firstItem="uBE-BQ-xYZ" firstAttribute="centerY" secondItem="CKP-kc-Stz" secondAttribute="centerY" id="C3i-bY-E8C"/>
+                            <constraint firstItem="uBE-BQ-xYZ" firstAttribute="width" secondItem="CKP-kc-Stz" secondAttribute="width" id="TE6-sb-Jk0"/>
+                            <constraint firstItem="uBE-BQ-xYZ" firstAttribute="centerX" secondItem="CKP-kc-Stz" secondAttribute="centerX" id="iXK-a7-InG"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OqW-zg-SJG" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -49,4 +224,7 @@
             <point key="canvasLocation" x="1168" y="298"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="miAuth.png" width="1024" height="1024"/>
+    </resources>
 </document>
