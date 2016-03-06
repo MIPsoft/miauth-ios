@@ -9,10 +9,17 @@
 import LocalAuthentication //Support for fingerprint reader
 import UIKit
 
+enum PinCodeQueryType {
+    case SetNew
+    case Validate
+}
+
 class ExtAuthManager {
     static let sharedInstance = ExtAuthManager()
     var authenticators:Array<ExtAuthClient> = []
     var attributes = [String: String]()
+    var pinCodeQueryType:PinCodeQueryType = .Validate
+    var pinCodeLength:Int = 4
     
     init()
     {

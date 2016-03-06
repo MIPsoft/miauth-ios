@@ -32,6 +32,7 @@ class InitAuthenticatorViewController: UIViewController,GIDSignInUIDelegate {
         super.viewDidAppear(animated)
         GIDSignIn.sharedInstance().uiDelegate = self
         extAuthStatusChanged(nil)
+        segmentedPinLength.selectedSegmentIndex = ExtAuthManager.sharedInstance.pinCodeLength-4
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "extAuthStatusChanged:", name:"ExtAuthStatusChange", object: nil)
     }
     
@@ -58,7 +59,9 @@ class InitAuthenticatorViewController: UIViewController,GIDSignInUIDelegate {
     */
     
     @IBAction func buttonPressed(sender:UIButton!) {
-        
+        if sender==buttonPinPad {
+            ExtAuthManager.sharedInstance.pinCodeQueryType = .SetNew
+        }
     }
     
     @IBAction func switchChanged(sender:UISwitch!) {
@@ -73,6 +76,7 @@ class InitAuthenticatorViewController: UIViewController,GIDSignInUIDelegate {
     }
     
     @IBAction func segmentChanged(sender:UISegmentedControl!) {
+         ExtAuthManager.sharedInstance.pinCodeLength = segmentedPinLength.selectedSegmentIndex + 4
     }
     
 }

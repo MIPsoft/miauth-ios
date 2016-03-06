@@ -40,6 +40,9 @@ class PinPadViewController: UIViewController {
     var pinCodeLength:Int = 4
     var buttonDelete:UIButton?
     var buttonBack:UIButton?
+    var setNewRound:Int = 0
+    var setNewFirstCode:String = ""
+    let topLabelBackgroundColor:UIColor = UIColor.init(colorLiteralRed: 0, green: 0, blue: 0, alpha: 0.2)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,7 +53,7 @@ class PinPadViewController: UIViewController {
         let topHeight = screenHeight! - btnHeight!*4
         
         labelTitle = InsetLabel(frame: CGRectMake(0,0,screenWidth!,topHeight/2))
-        labelTitle!.backgroundColor = UIColor.init(colorLiteralRed: 0, green: 0, blue: 0, alpha: 0.2)
+        labelTitle!.backgroundColor = topLabelBackgroundColor;
         labelTitle!.textAlignment = .Center
         labelTitle!.font =  UIFont.monospacedDigitSystemFontOfSize(screenHeight!/20.0,weight: 0.1)
         self.view.addSubview(labelTitle!)
@@ -75,6 +78,13 @@ class PinPadViewController: UIViewController {
         }
         
         updateObscured()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        pinCodeLength = ExtAuthManager.sharedInstance.pinCodeLength
+        updateObscured()
+        setNewRound = 0
+        super.viewWillAppear(animated)
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -167,7 +177,43 @@ class PinPadViewController: UIViewController {
         }
     }
     
+    func updateTitle(titleText:String,title2:String,backgroundColor:UIColor)
+    {
+        labelTitle!.text = titleText
+        self.labelTitle!.backgroundColor = backgroundColor
+        
+        if (backgroundColor != topLabelBackgroundColor) || (title2.characters.count>0)  {
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(1.0 * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), {
+                if  title2.characters.count>0 {
+                    self.labelTitle!.text = title2
+                }
+                self.labelTitle!.backgroundColor = self.topLabelBackgroundColor
+            })
+        }
+    }
+    
     func checkPinCode() {
+        if ExtAuthManager.sharedInstance.pinCodeQueryType == .SetNew {
+            if setNewRound == 0 {
+                setNewFirstCode = pinCodeEntered
+                updateTitle("Anna koodi uudestaan",title2: "",backgroundColor: UIColor.init(colorLiteralRed: 0, green: 1, blue: 0, alpha: 0.2))
+                pinCodeEntered = ""
+                setNewRound++
+                updateObscured()
+                return
+            }
+            else
+            {
+                if pinCodeEntered==setNewFirstCode {
+                    self.dismissViewControllerAnimated(true, completion: nil)
+                    return
+                }
+                else {
+                    updateTitle("Koodi ei ollut sama",title2:"Anna koodi uudestaan",backgroundColor: UIColor.init(colorLiteralRed: 1, green: 0, blue: 0, alpha: 0.2))
+                }
+            }
+        }
+        
         pinCodeEntered = ""
         updateObscured()
         AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
@@ -187,4 +233,6 @@ class PinPadViewController: UIViewController {
     {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
+    
+    
 }
