@@ -69,22 +69,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate,GIDSignInDelegate {
         withError error: NSError!) {
             if (error == nil) {
                 ExtAuthClientGoogle.sharedInstance.signInOk(user.userID, email: user.profile.email, name: user.profile.name)
-                /*
-                let userId = user.userID                  // For client-side use only!
-                let idToken = user.authentication.idToken // Safe to send to the server
-                let name = user.profile.name
-                let email = user.profile.email
-                print("userId=\(userId) email=\(email) name=\(name)")
-*/
-                /*
-                activeMiauEngine = MiauEngine.init(provider: "Google", masterKey: userId)
-                activeMiauEngine?.setAttribute("google", key: "provider")
-                activeMiauEngine?.setAttribute(user.profile.email, key: "email")
-                activeMiauEngine?.setAttribute(user.profile.name, key: "name")
-                if user.profile.hasImage {
-                    activeMiauEngine?.setAttribute(user.profile.imageURLWithDimension(128).absoluteString, key: "userimageurl")
-                }
-                */
             } else {
                 print("Google sign-in failed \(error.localizedDescription)")
                 ExtAuthClientGoogle.sharedInstance.signInError(error.localizedDescription)

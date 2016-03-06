@@ -164,7 +164,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" alpha="0.05000000074505806" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="miAuth.png" translatesAutoresizingMaskIntoConstraints="NO" id="uBE-BQ-xYZ">
-                                <rect key="frame" x="113" y="225" width="363" height="367"/>
+                                <rect key="frame" x="26" y="221" width="363" height="367"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -178,7 +178,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OqW-zg-SJG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-329" y="1037"/>
+            <point key="canvasLocation" x="-329" y="1036"/>
         </scene>
     </scenes>
     <resources>

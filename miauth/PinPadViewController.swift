@@ -9,6 +9,22 @@
 import UIKit
 import AudioToolbox
 
+class InsetLabel: UILabel {
+    let topInset = CGFloat(30.0), bottomInset = CGFloat(0.0), leftInset = CGFloat(0.0), rightInset = CGFloat(0.0)
+    
+    override func drawTextInRect(rect: CGRect) {
+        let insets: UIEdgeInsets = UIEdgeInsets(top: topInset, left: leftInset, bottom: bottomInset, right: rightInset)
+        super.drawTextInRect(UIEdgeInsetsInsetRect(rect, insets))
+    }
+    
+    override func intrinsicContentSize() -> CGSize {
+        var intrinsicSuperViewContentSize = super.intrinsicContentSize()
+        intrinsicSuperViewContentSize.height += topInset + bottomInset
+        intrinsicSuperViewContentSize.width += leftInset + rightInset
+        return intrinsicSuperViewContentSize
+    }
+}
+
 class PinPadViewController: UIViewController {
     var buttonsArray: Array<UIButton> = []
     let obscureChars:Array<Character> = ["◦","●"]
@@ -19,9 +35,11 @@ class PinPadViewController: UIViewController {
     var btnHeight:CGFloat?
     var screenHeight:CGFloat?
     var labelObscured:UILabel?
+    var labelTitle:InsetLabel?
     var pinCodeEntered:String = ""
     var pinCodeLength:Int = 4
     var buttonDelete:UIButton?
+    var buttonBack:UIButton?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +49,20 @@ class PinPadViewController: UIViewController {
         btnHeight = btnWidth
         let topHeight = screenHeight! - btnHeight!*4
         
-        labelObscured = UILabel(frame: CGRectMake(0,0,screenWidth!,topHeight))
+        labelTitle = InsetLabel(frame: CGRectMake(0,0,screenWidth!,topHeight/2))
+        labelTitle!.backgroundColor = UIColor.init(colorLiteralRed: 0, green: 0, blue: 0, alpha: 0.2)
+        labelTitle!.textAlignment = .Center
+        labelTitle!.font =  UIFont.monospacedDigitSystemFontOfSize(screenHeight!/20.0,weight: 0.1)
+        self.view.addSubview(labelTitle!)
+        labelTitle!.text  = "Anna pääsykoodi"
+        
+        buttonBack  = UIButton(type: UIButtonType.System) as UIButton
+        buttonBack!.frame = CGRectMake(0,20,screenWidth!*0.2, 20)
+        buttonBack!.setTitle("Peruuta", forState: .Normal)
+        buttonBack!.addTarget(self, action: "buttonBack:", forControlEvents: UIControlEvents.TouchUpInside)
+        self.view.addSubview(buttonBack!)
+        
+        labelObscured = UILabel(frame: CGRectMake(0,topHeight/2,screenWidth!,topHeight/2.5))
         labelObscured!.textAlignment = .Center
         labelObscured!.font =  UIFont.monospacedDigitSystemFontOfSize(screenHeight!/10.0,weight: 0.1)
         self.view.addSubview(labelObscured!)
@@ -150,5 +181,10 @@ class PinPadViewController: UIViewController {
         anim.repeatCount = 2
         anim.duration = 7/100
         labelObscured!.layer.addAnimation( anim, forKey:nil )
+    }
+    
+    func buttonBack(sender:UIButton!)
+    {
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
 }
