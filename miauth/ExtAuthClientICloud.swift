@@ -10,6 +10,7 @@ import UIKit
 import CloudKit
 
 class ExtAuthClientICloud: ExtAuthClient {
+    static let sharedInstance = ExtAuthClientICloud()
     var authName = "iCloud"
     var authUserID = ""
     var isAvailable = false

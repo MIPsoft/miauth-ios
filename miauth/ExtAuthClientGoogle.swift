@@ -6,6 +6,8 @@
 //  Copyright © 2016 MIPsoft. All rights reserved.
 //
 
+import Foundation
+
 class ExtAuthClientGoogle: ExtAuthClient {
     static let sharedInstance = ExtAuthClientGoogle()
     var authName = "Google"
@@ -27,6 +29,13 @@ class ExtAuthClientGoogle: ExtAuthClient {
         authUserID = userId
         ExtAuthManager.sharedInstance.setAttribute(email, key: "email")
         ExtAuthManager.sharedInstance.setAttribute(name, key: "name")
+        NSNotificationCenter.defaultCenter().postNotificationName("ExtAuthStatusChange", object: self)
+    }
+    
+    func signInError(errorText:String?) {
+        isAvailable = false
+        authUserID = ""
+        NSNotificationCenter.defaultCenter().postNotificationName("ExtAuthStatusChange", object: self)
     }
 
 }

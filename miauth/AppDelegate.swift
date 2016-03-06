@@ -87,6 +87,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate,GIDSignInDelegate {
                 */
             } else {
                 print("Google sign-in failed \(error.localizedDescription)")
+                ExtAuthClientGoogle.sharedInstance.signInError(error.localizedDescription)
             }
     }
     

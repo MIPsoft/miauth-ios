@@ -7,8 +7,15 @@
 //
 
 import UIKit
+import Google
 
-class InitAuthenticatorViewController: UIViewController {
+class InitAuthenticatorViewController: UIViewController,GIDSignInUIDelegate {
+    
+    @IBOutlet weak var switchICloud:UISwitch!
+    @IBOutlet weak var switchGoogle:UISwitch!
+    @IBOutlet weak var buttonPinPad:UIButton!
+    @IBOutlet weak var switchFingerPrintReader:UISwitch!
+    @IBOutlet weak var segmentedPinLength:UISegmentedControl!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +28,25 @@ class InitAuthenticatorViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        GIDSignIn.sharedInstance().uiDelegate = self
+        extAuthStatusChanged(nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "extAuthStatusChanged:", name:"ExtAuthStatusChange", object: nil)
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: "ExtAuthStatusChange", object: nil)
+    }
+    
+    func extAuthStatusChanged(notification: NSNotification?){
+        //Take Action on Notification
+        switchICloud.on = ExtAuthClientICloud.sharedInstance.isAvailable
+        switchICloud.enabled = !switchICloud.on
+        switchGoogle.on = ExtAuthClientGoogle.sharedInstance.isAvailable
+    }
+    
     /*
     // MARK: - Navigation
 
@@ -31,5 +56,23 @@ class InitAuthenticatorViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    
+    @IBAction func buttonPressed(sender:UIButton!) {
+        
+    }
+    
+    @IBAction func switchChanged(sender:UISwitch!) {
+        if sender==switchGoogle {
+            if switchGoogle.on {
+                GIDSignIn.sharedInstance().signIn()
+            }
+            else {
+                GIDSignIn.sharedInstance().signOut()
+            }
+        }
+    }
+    
+    @IBAction func segmentChanged(sender:UISegmentedControl!) {
+    }
+    
 }

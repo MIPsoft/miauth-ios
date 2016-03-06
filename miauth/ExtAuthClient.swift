@@ -12,18 +12,5 @@ protocol ExtAuthClient {
     var isAvailable: Bool { get set }
     var priority: Int { get set } //smallest priority is the best
     
-    
     func autoConnect()
-    /*
-    func init(name:String)
-    
-    
-    {
-        authName = name
-        print("ExternalAuthenticationClient init for \(authName)")
-    }
-    
-    func autoConnect() {
-        print("ExternalAuthenticationClient \(authName) autoconnecting")
-    } */
 }
