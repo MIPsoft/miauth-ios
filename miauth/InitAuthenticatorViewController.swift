@@ -16,11 +16,26 @@ class InitAuthenticatorViewController: UIViewController,GIDSignInUIDelegate {
     @IBOutlet weak var buttonPinPad:UIButton!
     @IBOutlet weak var switchFingerPrintReader:UISwitch!
     @IBOutlet weak var segmentedPinLength:UISegmentedControl!
+    @IBOutlet weak var labelTitle1:UILabel!
+    @IBOutlet weak var labelTitle2:UILabel!
+    @IBOutlet weak var labelTitle3:UILabel!
+    var blurEffectView:UIVisualEffectView!
+    var pincode:String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.ExtraLight)
+        blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView.frame = view.bounds
+        blurEffectView.alpha = 0.8
+        blurEffectView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight] // for supporting device rotation
+        view.addSubview(blurEffectView)
+        
+        let touchIdPresent = ExtAuthManager.sharedInstance.fingerprintReaderIsAvailable()
+        labelTitle3.hidden = !touchIdPresent
+        switchFingerPrintReader.hidden = !touchIdPresent
     }
 
     override func didReceiveMemoryWarning() {
@@ -30,6 +45,7 @@ class InitAuthenticatorViewController: UIViewController,GIDSignInUIDelegate {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
+        setScreenStatus()
         GIDSignIn.sharedInstance().uiDelegate = self
         extAuthStatusChanged(nil)
         segmentedPinLength.selectedSegmentIndex = ExtAuthManager.sharedInstance.pinCodeLength-4
@@ -41,11 +57,37 @@ class InitAuthenticatorViewController: UIViewController,GIDSignInUIDelegate {
         NSNotificationCenter.defaultCenter().removeObserver(self, name: "ExtAuthStatusChange", object: nil)
     }
     
+    func setScreenStatus()
+    {
+        if ( switchICloud.on || switchGoogle.on ) {
+            unBlurSecureWithPin() //TODO: Jos on sormenjälki annettu, pitää antaa Seal...
+        }
+
+        if pincode?.characters.count>=4  {
+            unBlurSealWithFingerprint()
+        }
+    }
+    
+    func unBlurConnect() {
+        blurEffectView.hidden = false
+        blurEffectView.frame.origin.y = labelTitle2.frame.origin.y
+    }
+
+    func unBlurSecureWithPin() {
+        blurEffectView.hidden = false
+        blurEffectView.frame.origin.y = labelTitle3.frame.origin.y
+    }
+    
+    func unBlurSealWithFingerprint() {
+        blurEffectView.hidden = true
+    }
+    
     func extAuthStatusChanged(notification: NSNotification?){
         //Take Action on Notification
         switchICloud.on = ExtAuthClientICloud.sharedInstance.isAvailable
         switchICloud.enabled = !switchICloud.on
         switchGoogle.on = ExtAuthClientGoogle.sharedInstance.isAvailable
+        setScreenStatus()
     }
     
     /*
@@ -61,7 +103,15 @@ class InitAuthenticatorViewController: UIViewController,GIDSignInUIDelegate {
     @IBAction func buttonPressed(sender:UIButton!) {
         if sender==buttonPinPad {
             ExtAuthManager.sharedInstance.pinCodeQueryType = .SetNew
+            //{ (s1: String, s2: String) -> Bool in return s1 > s2 }
+            PinPadViewController.sharedInstance.registerCallbackForPinCodeEntered( {  (pin:String) -> () in self.pincodeReceived(pin) } );
         }
+    }
+    
+   func pincodeReceived(pin:String) ->(Void) {
+        print("pin=\(pin)")
+        pincode = pin
+        setScreenStatus()
     }
     
     @IBAction func switchChanged(sender:UISwitch!) {
@@ -72,7 +122,19 @@ class InitAuthenticatorViewController: UIViewController,GIDSignInUIDelegate {
             else {
                 GIDSignIn.sharedInstance().signOut()
             }
+            return
         }
+        
+        if sender==switchFingerPrintReader {
+            if switchFingerPrintReader.on {
+                ExtAuthClientICloud.sharedInstance.authenticateAndSavePinUsingTouchID(pincode!)
+            }
+            else {
+                //
+            }
+            return
+        }
+        
     }
     
     @IBAction func segmentChanged(sender:UISegmentedControl!) {

@@ -8,6 +8,14 @@
 
 import UIKit
 import CloudKit
+import LocalAuthentication //Support for fingerprint reader
+
+enum FingerPrintResponse {
+    case VerifyOk
+    case VerifyError
+    case NoFingerPrintReader
+    case Fallback
+}
 
 class ExtAuthClientICloud: ExtAuthClient {
     static let sharedInstance = ExtAuthClientICloud()
@@ -45,4 +53,43 @@ class ExtAuthClientICloud: ExtAuthClient {
             return false
         }
     }
+    
+    func isTouchIdPresent() -> Bool
+    {
+        let context = LAContext()
+        var error: NSError?
+        return context.canEvaluatePolicy(.DeviceOwnerAuthenticationWithBiometrics, error: &error) ;
+    }
+    
+    func authenticateAndSavePinUsingTouchID(pin:String!) -> FingerPrintResponse {
+        let context = LAContext()
+        var error: NSError?
+        var response:FingerPrintResponse = .VerifyError
+        
+        if context.canEvaluatePolicy(.DeviceOwnerAuthenticationWithBiometrics, error: &error) {
+            let reason = "Identify yourself!"
+            context.evaluatePolicy(.DeviceOwnerAuthenticationWithBiometrics, localizedReason: reason) {
+                 (success: Bool, authenticationError: NSError?) -> Void in
+                dispatch_async(dispatch_get_main_queue()) {
+                    if success {
+                        let data:NSData! = pin!.dataUsingEncoding(NSUTF8StringEncoding)
+                        context.setCredential(data, type: .ApplicationPassword)
+                        response = .VerifyOk
+                    } else {
+                        if let error = authenticationError {
+                            if error.code == LAError.UserFallback.rawValue {
+                                response =  .Fallback
+                            }
+                        }
+                       response =  .VerifyError
+                    }
+                }
+            }
+        } else {
+            response =  .NoFingerPrintReader
+        }
+        return response
+}
+
+
 }

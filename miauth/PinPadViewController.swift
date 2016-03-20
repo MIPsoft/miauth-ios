@@ -26,6 +26,7 @@ class InsetLabel: UILabel {
 }
 
 class PinPadViewController: UIViewController {
+    static let sharedInstance = PinPadViewController()
     var buttonsArray: Array<UIButton> = []
     let obscureChars:Array<Character> = ["◦","●"]
     let buttonLabel:Array<String> = ["1","2","3","4","5","6","7","8","9","","0","del"]
@@ -43,6 +44,12 @@ class PinPadViewController: UIViewController {
     var setNewRound:Int = 0
     var setNewFirstCode:String = ""
     let topLabelBackgroundColor:UIColor = UIColor.init(colorLiteralRed: 0, green: 0, blue: 0, alpha: 0.2)
+    static var callbackFunctionPinCodeEntered: ((pin:String)->())?
+    
+    func registerCallbackForPinCodeEntered(callback:(pin:String)->())
+    {
+        PinPadViewController.callbackFunctionPinCodeEntered = callback;
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -205,6 +212,7 @@ class PinPadViewController: UIViewController {
             else
             {
                 if pinCodeEntered==setNewFirstCode {
+                    PinPadViewController.callbackFunctionPinCodeEntered?(pin: pinCodeEntered)
                     self.dismissViewControllerAnimated(true, completion: nil)
                     return
                 }
