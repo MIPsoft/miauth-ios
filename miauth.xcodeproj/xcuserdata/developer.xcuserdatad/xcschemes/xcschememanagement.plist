@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>SampleApp1.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 		<key>miauth.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -18,6 +23,11 @@
 			<true/>
 		</dict>
 		<key>8B2F77521C81ACA500AF9020</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8BDC73EF1CA091910039D960</key>
 		<dict>
 			<key>primary</key>
 			<true/>

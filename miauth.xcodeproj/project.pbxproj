@@ -30,6 +30,11 @@
 		8B4C9D5A1C824BFC00DF5FF6 /* miAuth.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B4C9D591C824BFC00DF5FF6 /* miAuth.png */; };
 		8B4C9D5B1C824BFC00DF5FF6 /* miAuth.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B4C9D591C824BFC00DF5FF6 /* miAuth.png */; };
 		8BCCEAFE1C81BE19004B6170 /* PinPadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BCCEAFD1C81BE19004B6170 /* PinPadViewController.swift */; };
+		8BDC73F31CA091910039D960 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDC73F21CA091910039D960 /* AppDelegate.swift */; };
+		8BDC73F51CA091910039D960 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDC73F41CA091910039D960 /* ViewController.swift */; };
+		8BDC73F81CA091910039D960 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BDC73F61CA091910039D960 /* Main.storyboard */; };
+		8BDC73FA1CA091910039D960 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BDC73F91CA091910039D960 /* Assets.xcassets */; };
+		8BDC73FD1CA091910039D960 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BDC73FB1CA091910039D960 /* LaunchScreen.storyboard */; };
 		A6E8973754E63DBC955EE729 /* Pods_miauth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D23DE78326EFD168740442AC /* Pods_miauth.framework */; };
 /* End PBXBuildFile section */
 
@@ -66,6 +71,13 @@
 		8B4C9D521C822A0A00DF5FF6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		8B4C9D591C824BFC00DF5FF6 /* miAuth.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = miAuth.png; path = resources/miAuth.png; sourceTree = SOURCE_ROOT; };
 		8BCCEAFD1C81BE19004B6170 /* PinPadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinPadViewController.swift; sourceTree = "<group>"; };
+		8BDC73F01CA091910039D960 /* SampleApp1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleApp1.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8BDC73F21CA091910039D960 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		8BDC73F41CA091910039D960 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8BDC73F71CA091910039D960 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8BDC73F91CA091910039D960 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8BDC73FC1CA091910039D960 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8BDC73FE1CA091910039D960 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BC0670FAA87C9D0CB679E577 /* Pods-miauth.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-miauth.release.xcconfig"; path = "Pods/Target Support Files/Pods-miauth/Pods-miauth.release.xcconfig"; sourceTree = "<group>"; };
 		D01C203A9CEF8A32D2C3371F /* Pods-miauth.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-miauth.debug.xcconfig"; path = "Pods/Target Support Files/Pods-miauth/Pods-miauth.debug.xcconfig"; sourceTree = "<group>"; };
 		D23DE78326EFD168740442AC /* Pods_miauth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_miauth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -82,6 +94,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		8B2F77501C81ACA500AF9020 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8BDC73ED1CA091910039D960 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -105,6 +124,7 @@
 			children = (
 				8B2F77411C81ACA500AF9020 /* miauth */,
 				8B2F77561C81ACA500AF9020 /* miauthTests */,
+				8BDC73F11CA091910039D960 /* SampleApp1 */,
 				8B2F77401C81ACA500AF9020 /* Products */,
 				9B22B6D2CE9A214FCB6147E2 /* Pods */,
 				6090754FA5AE3E6F500384A2 /* Frameworks */,
@@ -116,6 +136,7 @@
 			children = (
 				8B2F773F1C81ACA500AF9020 /* miAuth.app */,
 				8B2F77531C81ACA500AF9020 /* miAuthTests.xctest */,
+				8BDC73F01CA091910039D960 /* SampleApp1.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -159,6 +180,19 @@
 				8B4C9D591C824BFC00DF5FF6 /* miAuth.png */,
 			);
 			name = resources;
+			sourceTree = "<group>";
+		};
+		8BDC73F11CA091910039D960 /* SampleApp1 */ = {
+			isa = PBXGroup;
+			children = (
+				8BDC73F21CA091910039D960 /* AppDelegate.swift */,
+				8BDC73F41CA091910039D960 /* ViewController.swift */,
+				8BDC73F61CA091910039D960 /* Main.storyboard */,
+				8BDC73F91CA091910039D960 /* Assets.xcassets */,
+				8BDC73FB1CA091910039D960 /* LaunchScreen.storyboard */,
+				8BDC73FE1CA091910039D960 /* Info.plist */,
+			);
+			path = SampleApp1;
 			sourceTree = "<group>";
 		};
 		9B22B6D2CE9A214FCB6147E2 /* Pods */ = {
@@ -211,6 +245,23 @@
 			productReference = 8B2F77531C81ACA500AF9020 /* miAuthTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		8BDC73EF1CA091910039D960 /* SampleApp1 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8BDC74011CA091910039D960 /* Build configuration list for PBXNativeTarget "SampleApp1" */;
+			buildPhases = (
+				8BDC73EC1CA091910039D960 /* Sources */,
+				8BDC73ED1CA091910039D960 /* Frameworks */,
+				8BDC73EE1CA091910039D960 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SampleApp1;
+			productName = SampleApp1;
+			productReference = 8BDC73F01CA091910039D960 /* SampleApp1.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -234,6 +285,9 @@
 						CreatedOnToolsVersion = 7.2.1;
 						TestTargetID = 8B2F773E1C81ACA500AF9020;
 					};
+					8BDC73EF1CA091910039D960 = {
+						CreatedOnToolsVersion = 7.2.1;
+					};
 				};
 			};
 			buildConfigurationList = 8B2F773A1C81ACA400AF9020 /* Build configuration list for PBXProject "miauth" */;
@@ -251,6 +305,7 @@
 			targets = (
 				8B2F773E1C81ACA500AF9020 /* miAuth */,
 				8B2F77521C81ACA500AF9020 /* miAuthTests */,
+				8BDC73EF1CA091910039D960 /* SampleApp1 */,
 			);
 		};
 /* End PBXProject section */
@@ -276,6 +331,16 @@
 			files = (
 				8B4C9D561C822A0A00DF5FF6 /* GoogleService-Info.plist in Resources */,
 				8B4C9D5B1C824BFC00DF5FF6 /* miAuth.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8BDC73EE1CA091910039D960 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8BDC73FD1CA091910039D960 /* LaunchScreen.storyboard in Resources */,
+				8BDC73FA1CA091910039D960 /* Assets.xcassets in Resources */,
+				8BDC73F81CA091910039D960 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -357,6 +422,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8BDC73EC1CA091910039D960 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8BDC73F51CA091910039D960 /* ViewController.swift in Sources */,
+				8BDC73F31CA091910039D960 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -380,6 +454,22 @@
 			isa = PBXVariantGroup;
 			children = (
 				8B2F774C1C81ACA500AF9020 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		8BDC73F61CA091910039D960 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8BDC73F71CA091910039D960 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		8BDC73FB1CA091910039D960 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8BDC73FC1CA091910039D960 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -552,6 +642,30 @@
 			};
 			name = Release;
 		};
+		8BDC73FF1CA091910039D960 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = SampleApp1/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mipsoft.SampleApp1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		8BDC74001CA091910039D960 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = SampleApp1/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mipsoft.SampleApp1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -581,6 +695,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		8BDC74011CA091910039D960 /* Build configuration list for PBXNativeTarget "SampleApp1" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8BDC73FF1CA091910039D960 /* Debug */,
+				8BDC74001CA091910039D960 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

@@ -127,7 +127,8 @@ class InitAuthenticatorViewController: UIViewController,GIDSignInUIDelegate {
         
         if sender==switchFingerPrintReader {
             if switchFingerPrintReader.on {
-                ExtAuthClientICloud.sharedInstance.authenticateAndSavePinUsingTouchID(pincode!)
+                let response = ExtAuthClientICloud.sharedInstance.authenticateAndSavePinUsingTouchID(pincode!)
+                switchFingerPrintReader.on = (response == .VerifyOk)
             }
             else {
                 //
