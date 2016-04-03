@@ -3,12 +3,12 @@ platform :ios, '8.0'
 # Uncomment this line if you're using Swift
 use_frameworks!
 
-target 'miauth' do
+target 'miAuth' do
 pod 'Google/SignIn'
 pod 'Sodium'
 end
 
-target 'miauthTests' do
+target 'miAuthTests' do
 
 end
 
