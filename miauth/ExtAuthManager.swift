@@ -25,8 +25,9 @@ class ExtAuthManager {
     
     init()
     {
-        authenticators.append(ExtAuthClientGoogle.init())
-        authenticators.append(ExtAuthClientICloud.init())
+        print("** CREATE ExtAuthManager")
+        authenticators.append(ExtAuthClientGoogle.sharedInstance)
+        authenticators.append(ExtAuthClientICloud.sharedInstance)
         doAutoConnect()
     }
     
@@ -75,6 +76,7 @@ class ExtAuthManager {
         attributes[key] = attr
     }
     
+    
     func fingerprintReaderIsAvailable() -> Bool {
         var error: NSError?
         let context = LAContext()
@@ -89,7 +91,7 @@ class ExtAuthManager {
             let reason = "Identify yourself!"
             
             context.evaluatePolicy(.DeviceOwnerAuthenticationWithBiometrics, localizedReason: reason) {
-                (success: Bool, authenticationError: NSError?) -> Void in
+                [unowned self] (success: Bool, authenticationError: NSError?) -> Void in
                 
                 dispatch_async(dispatch_get_main_queue()) {
                     if success {
@@ -109,6 +111,25 @@ class ExtAuthManager {
             notok()
         }
     }
-
+    
+    /*
+    func myOk()
+    {
+        NSNotificationCenter.defaultCenter().postNotificationName("returnToCallingAppEvent", object: nil)
+    }
+*/
+ 
+    func returnToCallingApp(authenticated:Bool) -> Bool {
+        let url:String = "\(callingAppCallback)://authentication?status=\(authenticated)"
+        if let miauthCallbackURL:NSURL = NSURL(string:url) {
+            let application:UIApplication = UIApplication.sharedApplication()
+            if (application.canOpenURL(miauthCallbackURL)) {
+                application.openURL(miauthCallbackURL);
+                return true
+            }
+            return false
+        }
+        return false
+    }
 
 }

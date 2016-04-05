@@ -135,12 +135,6 @@
                                     <segue destination="Ifl-ne-3Et" kind="showDetail" id="aUE-St-u4c"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Kirjaudu sovellukseen MiAuth XXXX" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="187-yl-yBp">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="310"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="51"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Bx-RI-asR">
                                 <rect key="frame" x="33" y="438" width="308" height="90"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -148,6 +142,9 @@
                                 <state key="normal" title="Peru kirjautuminen">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="buttonPressedCancel:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GEk-C0-1wL"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K3Y-pB-Tpf">
                                 <rect key="frame" x="33" y="298" width="308" height="90"/>
@@ -156,7 +153,16 @@
                                 <state key="normal" title="Salli">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="buttonPressedOK:" destination="BYZ-38-t0r" eventType="touchUpInside" id="G2s-eY-V6u"/>
+                                </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Kirjaudu sovellukseen MiAuth XXXX" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="187-yl-yBp">
+                                <rect key="frame" x="33" y="0.0" width="308" height="310"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="39"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -168,6 +174,8 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="buttonCancel" destination="6Bx-RI-asR" id="fBK-7I-9Q1"/>
+                        <outlet property="buttonOK" destination="K3Y-pB-Tpf" id="hKk-Qu-9jy"/>
                         <outlet property="labelHeader" destination="187-yl-yBp" id="PMS-C6-2bi"/>
                     </connections>
                 </viewController>

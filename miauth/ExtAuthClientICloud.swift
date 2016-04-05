@@ -78,8 +78,7 @@ class ExtAuthClientICloud: ExtAuthClient {
                     if success {
                         print("evaluatedPolicyDomainState=\(context.evaluatedPolicyDomainState)")
                         //<2de8a593 108fa6ca 275cbb6a 90cb1bb1 def1ab2c 2c4781d7 0407ca33 fb3bd6b8>
-                        //<763196ca 5e37cc2e fb84dea2 0770b1a1 2384cd64 a57a1ce2 88d88d71 ee8367fc>
-
+                        //<763196ca 5e37cc2e fb84dea2 0770b1a1 2384cd64 a57a1ce2 88d88d71 ee8367fc
                         response = .VerifyOk
                     } else {
                         if let error = authenticationError {
@@ -97,38 +96,4 @@ class ExtAuthClientICloud: ExtAuthClient {
         return response
 }
     
-    func authenticateAndGetPinUsingTouchID() -> (FingerPrintResponse,String) {
-        let context = LAContext()
-        var error: NSError?
-        var response:FingerPrintResponse = .VerifyError
-        
-        /*
-        if context.canEvaluatePolicy(.DeviceOwnerAuthenticationWithBiometrics, error: &error) {
-            let reason = "Identify yourself!"
-            context.evaluatePolicy(.DeviceOwnerAuthenticationWithBiometrics, localizedReason: reason) {
-                (success: Bool, authenticationError: NSError?) -> Void in
-                dispatch_async(dispatch_get_main_queue()) {
-                    if success {
-                        let data:NSData! = pin!.dataUsingEncoding(NSUTF8StringEncoding)
-                        context.setCredential(data, type: .ApplicationPassword)
-                        response = .VerifyOk
-                    } else {
-                        if let error = authenticationError {
-                            if error.code == LAError.UserFallback.rawValue {
-                                response =  .Fallback
-                            }
-                        }
-                        response =  .VerifyError
-                    }
-                }
-            }
-        } else {
-            response =  .NoFingerPrintReader
-        }
-*/
-        return (response,"")
-    }
-
-
-
 }
