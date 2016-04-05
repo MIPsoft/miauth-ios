@@ -20,12 +20,46 @@ class ExtAuthManager {
     var attributes = [String: String]()
     var pinCodeQueryType:PinCodeQueryType = .Validate
     var pinCodeLength:Int = 4
+    var callingAppCallback:String = ""
+    var callingAppName:String = ""
     
     init()
     {
         authenticators.append(ExtAuthClientGoogle.init())
         authenticators.append(ExtAuthClientICloud.init())
         doAutoConnect()
+    }
+    
+    func isMiAuthURL(url:String) -> Bool {
+        callingAppCallback = ""
+        callingAppName = ""
+        //url = miauth://authenticate?callbackurl=com.mipsoft.miauth-ios-sampleApp&app=miAuth+esimerkkiohjelma
+        let urlComponents = NSURLComponents(string: url)
+        if let scheme = urlComponents?.scheme {
+            if scheme == "miauth" {
+                let queryItems = urlComponents?.queryItems
+                if let callbackurl = queryItems?.filter({$0.name == "callbackurl"}).first {
+                    callingAppCallback = callbackurl.value!
+                    if let app = queryItems?.filter({$0.name == "app"}).first {
+                        callingAppName = app.value!
+                        print("callbackurl=\(callingAppCallback) app=\(callingAppName)")
+                        return true
+                    }
+                    else {
+                        return false
+                    }
+                }
+                else {
+                    return false
+                }
+            }
+            else {
+                return false
+            }
+        }
+        else {
+            return false
+        }
     }
     
     func doAutoConnect()

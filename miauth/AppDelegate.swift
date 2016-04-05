@@ -43,16 +43,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate,GIDSignInDelegate {
 
     func application(application: UIApplication,
         openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
-            return GIDSignIn.sharedInstance().handleURL(url,
-                sourceApplication: sourceApplication,
-                annotation: annotation)
+            return handleURL(url,sourceApplication: sourceApplication,annotation: annotation)
     }
     
     @available(iOS 9.0, *)
     func application(app: UIApplication, openURL url: NSURL, options: [String : AnyObject]) -> Bool {
-        return GIDSignIn.sharedInstance().handleURL(url,
-            sourceApplication: options[UIApplicationOpenURLOptionsSourceApplicationKey] as! String?,
-            annotation: options[UIApplicationOpenURLOptionsAnnotationKey])
+        return handleURL(url,sourceApplication: options[UIApplicationOpenURLOptionsSourceApplicationKey] as! String?,annotation: options[UIApplicationOpenURLOptionsAnnotationKey])
+    }
+    
+    func handleURL(url: NSURL!, sourceApplication: String!, annotation: AnyObject!) -> Bool
+    {
+        print("baseUrl=\(url.baseURL)")
+        if  ExtAuthManager().isMiAuthURL(url.absoluteString) {
+            return true
+        }
+        else {
+            return GIDSignIn.sharedInstance().handleURL(url,sourceApplication: sourceApplication,annotation: annotation)
+        }
     }
     
     func initializeGoogleSignin()
