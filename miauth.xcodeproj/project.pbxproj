@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6F302EE24D80180B64A31F44 /* Pods_miAuth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 455AD7CD72A193BC32A10083 /* Pods_miAuth.framework */; };
+		8B127F141CB4D88D0005CE38 /* AskPermissionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B127F131CB4D88D0005CE38 /* AskPermissionViewController.swift */; };
 		8B19812A1C8252440025EB07 /* InitAuthenticatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1981291C8252440025EB07 /* InitAuthenticatorViewController.swift */; };
 		8B2F77431C81ACA500AF9020 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2F77421C81ACA500AF9020 /* AppDelegate.swift */; };
 		8B2F77451C81ACA500AF9020 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2F77441C81ACA500AF9020 /* ViewController.swift */; };
@@ -51,6 +52,7 @@
 /* Begin PBXFileReference section */
 		31A8574B25C368FA6EF7A37B /* Pods-miAuth.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-miAuth.debug.xcconfig"; path = "Pods/Target Support Files/Pods-miAuth/Pods-miAuth.debug.xcconfig"; sourceTree = "<group>"; };
 		455AD7CD72A193BC32A10083 /* Pods_miAuth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_miAuth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B127F131CB4D88D0005CE38 /* AskPermissionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AskPermissionViewController.swift; sourceTree = "<group>"; };
 		8B1981291C8252440025EB07 /* InitAuthenticatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitAuthenticatorViewController.swift; sourceTree = "<group>"; };
 		8B2F773F1C81ACA500AF9020 /* miAuth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = miAuth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B2F77421C81ACA500AF9020 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 				8B38EA211C81B7D40084B705 /* miauth.entitlements */,
 				8B2F77421C81ACA500AF9020 /* AppDelegate.swift */,
 				8B2F77441C81ACA500AF9020 /* ViewController.swift */,
+				8B127F131CB4D88D0005CE38 /* AskPermissionViewController.swift */,
 				8B1981291C8252440025EB07 /* InitAuthenticatorViewController.swift */,
 				8BCCEAFD1C81BE19004B6170 /* PinPadViewController.swift */,
 				8B4C9D451C821BB200DF5FF6 /* ExtAuthClient.swift */,
@@ -410,6 +413,7 @@
 				8B2F77431C81ACA500AF9020 /* AppDelegate.swift in Sources */,
 				8B4C9D491C821CDB00DF5FF6 /* ExtAuthManager.swift in Sources */,
 				8B4C9D461C821BB200DF5FF6 /* ExtAuthClient.swift in Sources */,
+				8B127F141CB4D88D0005CE38 /* AskPermissionViewController.swift in Sources */,
 				8B4C9D4F1C821FDE00DF5FF6 /* ExtAuthClientICloud.swift in Sources */,
 				8B19812A1C8252440025EB07 /* InitAuthenticatorViewController.swift in Sources */,
 				8B4C9D4C1C821F9200DF5FF6 /* ExtAuthClientGoogle.swift in Sources */,

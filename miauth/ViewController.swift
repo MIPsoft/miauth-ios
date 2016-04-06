@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var labelHeader:UILabel!
     @IBOutlet weak var buttonOK:UIButton!
     @IBOutlet weak var buttonCancel:UIButton!
+    @IBOutlet weak var buttonSettings:UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,12 +23,17 @@ class ViewController: UIViewController {
         extAuthManager = ExtAuthManager.sharedInstance
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.returnToCallingAppEvent(_:)), name:"returnToCallingAppEvent", object: nil)
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector:#selector(setScreen), name:
+        NSNotificationCenter.defaultCenter().addObserver(self, selector:#selector(willEnterForground), name:
             UIApplicationWillEnterForegroundNotification, object: nil)
     }
     
     deinit {
         NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
+    
+    func willEnterForground() {
+        let dispatchTime: dispatch_time_t = dispatch_time(DISPATCH_TIME_NOW, Int64(0.1*Double(NSEC_PER_SEC)))
+        dispatch_after(dispatchTime, dispatch_get_main_queue(), {  self.setScreen() })
     }
     
     override func didReceiveMemoryWarning() {
@@ -41,19 +47,34 @@ class ViewController: UIViewController {
     }
     
     func setScreen() {
-        print("extAuthManager!.callingAppCallback=\(extAuthManager!.callingAppCallback)")
         if extAuthManager!.callingAppCallback=="" {
             //Launch config
-            self.labelHeader.text = ""
-            self.buttonOK.hidden = false;
-            self.buttonCancel.hidden = true;
+            labelHeader.text = "Tämä on miAuth-sovellus näppärään kännysovelluskirjautumiseen. Käy asetuksissa ja perusta itsellesi tili!"
+            buttonOK.hidden = true;
+            buttonCancel.hidden = true;
+            buttonSettings.hidden = false;
         }
         else {
-            buttonOK.hidden = false;
-            buttonCancel.hidden = false;
-            labelHeader.text = "Kirjaudu sovellukseen \(extAuthManager!.callingAppName)"
-            //labelHeader!.text = extAuthManager!.callingAppCallback
+            buttonOK.hidden = true;
+            buttonCancel.hidden = true;
+            buttonSettings.hidden = false;
+            let title:String = "Kirjaudu sovellukseen \(extAuthManager!.callingAppName)"
+            labelHeader.text = title
+            //performSegueWithIdentifier("GotoAskPermission", sender: nil)
+            extAuthManager!.fingerprintReaderReadNow( nil, ok:{ self.authOk() }, fallback: { self.authFallback() }, notok: { self.authFail() }, title:title )
         }
+    }
+    
+    func authOk() {
+        performSegueWithIdentifier("GotoAskPermission", sender: nil)
+    }
+    
+    func authFallback() {
+      extAuthManager!.returnToCallingApp(false)
+    }
+    
+    func authFail() {
+        extAuthManager!.returnToCallingApp(false)
     }
 
     @IBAction func buttonPressedOK(sender:UIButton!) {
@@ -74,17 +95,6 @@ class ViewController: UIViewController {
 
     }
     
-    func authOk() {
-        NSNotificationCenter.defaultCenter().postNotificationName("returnToCallingAppEvent", object: nil)
-    }
-    
-    func authFallback() {
-        labelHeader!.text = "fallback" //extAuthManager!.callingAppCallback
-    }
-    
-    func authFail() {
-         labelHeader!.text = "fail" //extAuthManager!.callingAppCallback
-    }
     
      func returnToCallingAppEvent(notification: NSNotification?)
      {

@@ -127,16 +127,30 @@ class InitAuthenticatorViewController: UIViewController,GIDSignInUIDelegate {
         
         if sender==switchFingerPrintReader {
             if switchFingerPrintReader.on {
-                let response = ExtAuthClientICloud.sharedInstance.authenticateAndSavePinUsingTouchID(pincode!)
-                switchFingerPrintReader.on = (response == .VerifyOk)
+                //let response = ExtAuthClientICloud.sharedInstance.authenticateAndSavePinUsingTouchID(pincode!)
+                extAuthManager!.fingerprintReaderReadNow(pincode!, ok: { self.authOk() }, fallback: { self.authFallback() }, notok: { self.authFail() },title:"Seal your credentials" )
             }
             else {
                 //
             }
             return
         }
-        
     }
+    
+    func authOk() {
+        switchFingerPrintReader.on = true
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func authFallback() {
+        switchFingerPrintReader.on = false
+    }
+    
+    func authFail() {
+        switchFingerPrintReader.on = false
+    }
+
+    
     
     @IBAction func segmentChanged(sender:UISegmentedControl!) {
          ExtAuthManager.sharedInstance.pinCodeLength = segmentedPinLength.selectedSegmentIndex + 4

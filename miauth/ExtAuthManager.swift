@@ -83,15 +83,15 @@ class ExtAuthManager {
         return context.canEvaluatePolicy(.DeviceOwnerAuthenticationWithBiometrics, error: &error)
     }
     
-    func fingerprintReaderReadNow(ok:()->(), fallback:()->(), notok:()->())  {
+    func fingerprintReaderReadNow(pin:String?,ok:()->(), fallback:()->(), notok:()->(), title:String)  {
         let context = LAContext()
         var error: NSError?
         
         if context.canEvaluatePolicy(.DeviceOwnerAuthenticationWithBiometrics, error: &error) {
-            let reason = "Identify yourself!"
+            let reason = title
             
             context.evaluatePolicy(.DeviceOwnerAuthenticationWithBiometrics, localizedReason: reason) {
-                [unowned self] (success: Bool, authenticationError: NSError?) -> Void in
+                (success: Bool, authenticationError: NSError?) -> Void in
                 
                 dispatch_async(dispatch_get_main_queue()) {
                     if success {
@@ -119,8 +119,21 @@ class ExtAuthManager {
     }
 */
  
-    func returnToCallingApp(authenticated:Bool) -> Bool {
-        let url:String = "\(callingAppCallback)://authentication?status=\(authenticated)"
+    func returnToCallingApp(authenticated:Bool,  name:String?=nil, email:String?=nil, address:String?=nil) -> Bool {
+        //TODO: Rakennettaan palautuvista datoista JSON luvituksen mukaisesti. Demossa nämä menee vielä fixattuna
+        //data:[String: String]
+        
+        var url:String = "\(callingAppCallback)://authentication?status=\(authenticated)"
+        if let nameStr = name?.stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet()) {
+            url = url+"&name="+nameStr
+        }
+        if let emailStr = email?.stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet()) {
+            url = url+"&email="+emailStr
+        }
+        if let addressStr = address?.stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet()) {
+            url = url+"&address="+addressStr
+        }
+        
         if let miauthCallbackURL:NSURL = NSURL(string:url) {
             let application:UIApplication = UIApplication.sharedApplication()
             if (application.canOpenURL(miauthCallbackURL)) {

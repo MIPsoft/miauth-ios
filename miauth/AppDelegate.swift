@@ -55,8 +55,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate,GIDSignInDelegate {
     {
         print("baseUrl=\(url.baseURL)")
         if  ExtAuthManager.sharedInstance.isMiAuthURL(url.absoluteString) {
-           // let dispatchTime: dispatch_time_t = dispatch_time(DISPATCH_TIME_NOW, Int64(3*Double(NSEC_PER_SEC)))
-           // dispatch_after(dispatchTime, dispatch_get_main_queue(), {  ViewController.sharedInstance.setScreen() })
             return true
         }
         else {

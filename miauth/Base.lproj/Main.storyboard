@@ -13,7 +13,7 @@
                         <viewControllerLayoutGuide type="bottom" id="uud-dN-tNS"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="UTh-rz-yL3">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="  1. Connect" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tql-Kj-dLF">
@@ -23,14 +23,14 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Apple iCloud" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kvN-QA-cQj">
-                                <rect key="frame" x="60" y="87" width="150" height="28"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Apple iCloud" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kvN-QA-cQj">
+                                <rect key="frame" x="113" y="87" width="150" height="28"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Google" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C6z-Wo-GyE">
-                                <rect key="frame" x="75" y="176" width="55" height="21"/>
+                                <rect key="frame" x="152" y="175" width="72" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -43,13 +43,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Length of PinCode" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="btP-z4-NGw">
-                                <rect key="frame" x="20" y="356" width="174" height="30"/>
+                                <rect key="frame" x="102" y="353" width="174" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="aB4-nY-vf3">
-                                <rect key="frame" x="20" y="385" width="174" height="29"/>
+                                <rect key="frame" x="102" y="383" width="174" height="29"/>
                                 <segments>
                                     <segment title="4"/>
                                     <segment title="5"/>
@@ -61,7 +61,7 @@
                                 </connections>
                             </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hAb-qA-tfI">
-                                <rect key="frame" x="20" y="432" width="174" height="28"/>
+                                <rect key="frame" x="102" y="445" width="174" height="28"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                 <state key="normal" title="Enter Pin code"/>
                                 <connections>
@@ -70,13 +70,13 @@
                                 </connections>
                             </button>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="HRw-0R-py9">
-                                <rect key="frame" x="78" y="113" width="51" height="31"/>
+                                <rect key="frame" x="164" y="117" width="51" height="31"/>
                                 <connections>
                                     <action selector="switchChanged:" destination="Ifl-ne-3Et" eventType="valueChanged" id="NzB-ho-cPv"/>
                                 </connections>
                             </switch>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="7SU-zV-D4w">
-                                <rect key="frame" x="78" y="199" width="51" height="31"/>
+                                <rect key="frame" x="164" y="197" width="51" height="31"/>
                                 <connections>
                                     <action selector="switchChanged:" destination="Ifl-ne-3Et" eventType="valueChanged" id="36C-gf-DK6"/>
                                 </connections>
@@ -89,7 +89,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="PfO-ZV-ngC">
-                                <rect key="frame" x="78" y="599" width="51" height="31"/>
+                                <rect key="frame" x="164" y="597" width="51" height="31"/>
                                 <connections>
                                     <action selector="switchChanged:" destination="Ifl-ne-3Et" eventType="valueChanged" id="7Gp-mD-x4Z"/>
                                 </connections>
@@ -97,7 +97,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="buttonPinPad" destination="hAb-qA-tfI" id="YiH-2I-Eyg"/>
                         <outlet property="labelTitle1" destination="Tql-Kj-dLF" id="KEa-Qq-SAc"/>
@@ -128,41 +128,42 @@
                             <imageView userInteractionEnabled="NO" alpha="0.029999999999999999" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="miAuth.png" translatesAutoresizingMaskIntoConstraints="NO" id="s3x-va-ane">
                                 <rect key="frame" x="0.0" y="-61" width="375" height="667"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wIZ-mu-WON">
-                                <rect key="frame" x="314" y="612" width="46" height="30"/>
-                                <state key="normal" title="Config"/>
-                                <connections>
-                                    <segue destination="Ifl-ne-3Et" kind="showDetail" id="aUE-St-u4c"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Bx-RI-asR">
-                                <rect key="frame" x="33" y="438" width="308" height="90"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <state key="normal" title="Peru kirjautuminen">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="buttonPressedCancel:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GEk-C0-1wL"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K3Y-pB-Tpf">
-                                <rect key="frame" x="33" y="298" width="308" height="90"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VAT-cM-KOT">
+                                <rect key="frame" x="77" y="505" width="308" height="90"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="Salli">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="buttonPressedOK:" destination="BYZ-38-t0r" eventType="touchUpInside" id="G2s-eY-V6u"/>
+                                    <segue destination="OPA-oq-8vQ" kind="presentation" identifier="GotoAskPermission" id="qZ5-nn-mzG"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Kirjaudu sovellukseen MiAuth XXXX" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="187-yl-yBp">
-                                <rect key="frame" x="33" y="0.0" width="308" height="310"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="39"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K3Y-pB-Tpf">
+                                <rect key="frame" x="33" y="407" width="308" height="90"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="Asetukset">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Ifl-ne-3Et" kind="show" identifier="GotoSettings" id="FHE-D3-T6a"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Kirjaudu sovellukseen MiAuth XXXX" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="187-yl-yBp">
+                                <rect key="frame" x="33" y="86" width="308" height="260"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Bx-RI-asR">
+                                <rect key="frame" x="-5" y="564" width="308" height="90"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="Peru kirjautuminen">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -175,18 +176,19 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="buttonCancel" destination="6Bx-RI-asR" id="fBK-7I-9Q1"/>
-                        <outlet property="buttonOK" destination="K3Y-pB-Tpf" id="hKk-Qu-9jy"/>
+                        <outlet property="buttonOK" destination="VAT-cM-KOT" id="tHM-H0-Xvm"/>
+                        <outlet property="buttonSettings" destination="K3Y-pB-Tpf" id="y8j-DI-vvI"/>
                         <outlet property="labelHeader" destination="187-yl-yBp" id="PMS-C6-2bi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="277.5" y="201.5"/>
+            <point key="canvasLocation" x="279.5" y="251.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Ask Permission View Controller-->
         <scene sceneID="Ac9-1n-5lx">
             <objects>
-                <viewController id="OPA-oq-8vQ" sceneMemberID="viewController">
+                <viewController id="OPA-oq-8vQ" customClass="AskPermissionViewController" customModule="miAuth" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="c7q-t1-Sq7"/>
                         <viewControllerLayoutGuide type="bottom" id="9eq-tm-hmZ"/>
@@ -196,35 +198,64 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sähköpostiosoite" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NgO-YF-qpW">
-                                <rect key="frame" x="106" y="320" width="369" height="41"/>
+                                <rect key="frame" x="106" y="305" width="262" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6OC-zR-lsL">
-                                <rect key="frame" x="33" y="325" width="51" height="31"/>
+                                <rect key="frame" x="33" y="310" width="51" height="31"/>
                             </switch>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Etunimi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="saE-4P-djj">
-                                <rect key="frame" x="108" y="254" width="369" height="41"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PG1-gf-Nte">
-                                <rect key="frame" x="35" y="259" width="51" height="31"/>
+                                <rect key="frame" x="33" y="261" width="51" height="31"/>
                             </switch>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cnm-uq-SFr">
+                                <rect key="frame" x="33" y="543" width="308" height="90"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="Peru">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonPressedCancel:" destination="OPA-oq-8vQ" eventType="touchUpInside" id="BJG-a0-1TU"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jsU-k7-IuJ">
+                                <rect key="frame" x="33" y="421" width="308" height="90"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="Salli">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonPressedOK:" destination="OPA-oq-8vQ" eventType="touchUpInside" id="Gqe-Tp-tPs"/>
+                                </connections>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Kotiosoite" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EdD-Ys-ttj">
-                                <rect key="frame" x="108" y="380" width="369" height="41"/>
+                                <rect key="frame" x="106" y="354" width="257" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8NN-Yk-st2">
-                                <rect key="frame" x="35" y="385" width="51" height="31"/>
+                                <rect key="frame" x="33" y="359" width="51" height="31"/>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Haluatko antaa sovellukselle seuraavat tiedot?" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5br-WO-qdE">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="224"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="45"/>
+                                <rect key="frame" x="11" y="66" width="352" height="184"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="33"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Kirjaudu sovellukseen" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gUS-ON-HFr">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <color key="textColor" red="0.99494993093922657" green="0.99494993093922657" blue="0.99494993093922657" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nimi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="saE-4P-djj">
+                                <rect key="frame" x="108" y="256" width="255" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -232,6 +263,14 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="buttonCancel" destination="cnm-uq-SFr" id="KYN-DH-X44"/>
+                        <outlet property="buttonOK" destination="jsU-k7-IuJ" id="4w2-fT-2Us"/>
+                        <outlet property="labelHeader" destination="5br-WO-qdE" id="hIZ-bw-jQc"/>
+                        <outlet property="switchAddress" destination="8NN-Yk-st2" id="L0U-65-M8X"/>
+                        <outlet property="switchEmail" destination="6OC-zR-lsL" id="lAb-jy-W6T"/>
+                        <outlet property="switchName" destination="PG1-gf-Nte" id="nMe-4K-s8R"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dgD-q1-9hM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -246,7 +285,7 @@
                         <viewControllerLayoutGuide type="bottom" id="es4-BL-wyr"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="CKP-kc-Stz">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" alpha="0.05000000074505806" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="miAuth.png" translatesAutoresizingMaskIntoConstraints="NO" id="uBE-BQ-xYZ">
